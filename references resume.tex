@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+
+
+
+\begin{document}
+
+\section{Resumo das referências bibliográficas}
+
+%PAPER 1
+\subsection{Converting Static Image Datasets to Spiking Neuromorphic Datasets
+Using Saccades,\\ \textit{Garrick Orchard, Ajinkya Jayawant, Gregory K. Cohen and Nitish Thakor}}
+Dada a não existência de datasets neuromórficos obtidas directamente dos sensores, o autor decidiu criá-los utilizando os datasets de imagens estáticos já existentes (NMIST e Caltech-101).
+\\INPUT - Datasets de imagens estáticos
+\\OUTPUT - Ficheiro binário com os eventos detectados, e a corespondente localização, \textit{timestamp} e a polaridade ON/OFF.
+O método de obtenção consistiu em ter uma câmara ATIS montado sobre uma plataforma que efectua movimentos Saccade com dois servos comandados por um FPGA, apontado a um écrã onde as imagens passam sequencialmente.
+\\Contribuição - Criação de um dataset neuromórfico para utilização futura deste tipo de imagens em reconhecimento de imagens. O autor inovou na maneira como se obtêm os datasets de treino e de teste, que em vez de ser por simulação (movimentar a imagem no próprio écrã), movimenta a câmara para suprimir a descontinuidade presente na taxa de refresh do écrã, e simular os movimentos de retina dos humanos e primatas.
+
+
+%PAPER 2
+\subsection{HFirst: A Temporal Approach to Object Recognition \\ \textit{Garrick Orchard, Cedric Meyer, Ralph Etienne-Cummings Fellow, Christoph Posch Senior Member, Nitish Thakor Fellow, IEEE, Ryad Benosman
+}}
+De modo a tirar proveito da informação de \textit{timestamp} na representação AER dos sensores neuromórficos, o autor pretende apresentar um modelo de detecção de objectos baseado em SNN (Spiking Neural Network) que diferente dos CNN (Convolutional Neural Networks), para efectuar a operação MAX em vez de comparar todos os spikes, supõe-se a partida que o primeiro disparo é mais intenso que os restantes (\textit{Winner-Take-All}), o que se verifica por observações biológicas. Isto melhora significativamente o tempo de computação.
+\\INPUT - 
+\\OUTPUT - Algoritmo HFirst
+\\Contribuiçao - Novo modelo de detecçã de objectos: 
+\\-Permite a detecção de múltiplos objectos
+\\-O baixo custo de computação do algoritmo HFirst permite a sua implementação numa placa FPGA. 
+
+\end{document}
+
+
+
